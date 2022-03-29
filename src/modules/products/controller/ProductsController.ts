@@ -33,7 +33,8 @@ export default class ProductsController {
       name,
       price,
       quantity,
-    });
+    })
+    .catch(err => console.log(err));
 
     return response.json({ product });
   }

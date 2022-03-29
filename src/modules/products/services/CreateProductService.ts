@@ -24,7 +24,8 @@ class CreateProductService {
       quantity,
     });
 
-    await productsRepository.save(product);
+    await productsRepository.save(product)
+    .catch(err => console.log(err));
 
     return product;
   }
