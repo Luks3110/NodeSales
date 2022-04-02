@@ -6,7 +6,6 @@ export default class UsersController {
     const listUser = new ListUserService();
 
     const users = await listUser.execute();
-
     return response.json({ users });
   }
 
@@ -15,11 +14,13 @@ export default class UsersController {
 
     const createUser = new CreateUserService();
 
-    const user = await createUser.execute({
-      name,
-      email,
-      password,
-    });
+    const user = await createUser
+      .execute({
+        name,
+        email,
+        password,
+      })
+      .catch(err => console.log(err));
 
     return response.json({ user });
   }

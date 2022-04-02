@@ -14,13 +14,13 @@ class User {
   @Column()
   name: string;
 
-  @Column({unique: true})
+  @Column({ unique: true })
   email: string;
 
   @Column()
   password: string;
 
-  @Column({nullable: true})
+  @Column({ nullable: true })
   avatar: string;
 
   @CreateDateColumn()
