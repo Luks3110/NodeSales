@@ -14,13 +14,11 @@ export default class UsersController {
 
     const createUser = new CreateUserService();
 
-    const user = await createUser
-      .execute({
-        name,
-        email,
-        password,
-      })
-      .catch(err => console.log(err));
+    const user = await createUser.execute({
+      name,
+      email,
+      password,
+    });
 
     return response.json({ user });
   }
