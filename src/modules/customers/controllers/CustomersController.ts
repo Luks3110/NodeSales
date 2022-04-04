@@ -62,6 +62,6 @@ export default class CustomersController {
 
     await deleteCustomer.execute({ id });
 
-    return response.status(204);
+    return response.status(200).json({ message: 'Customer deleted' });
   }
 }
